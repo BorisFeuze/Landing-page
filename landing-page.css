@@ -7,28 +7,56 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  background-color: beige;
 }
 
-header {
-  padding: 2rem 4rem;
-  /* border-bottom: 2px solid #29213f; */
+header,
+main,
+footer {
+  margin-inline: auto;
+  max-width: 500px;
+  @media screen and (width <= 450px) {
+    max-width: 300px;
+  }
+}
+
+header,
+footer {
+  background-color: rgb(123, 254, 204);
+}
+
+header h1 {
+  text-align: center;
 }
 
 main {
-  margin: 2rem 4rem;
+  margin-block: 2rem;
+  /* border: 1px solid; */
 }
 
 section {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 p {
   max-width: 80ch;
 }
 
+p::first-letter {
+  font-size: 150%;
+  color: inherit;
+}
+
 h1,
 h2 {
   margin-bottom: 0.8rem;
+}
+
+@media screen and (width <= 450px) {
+  section ul {
+    margin-left: 1rem;
+  }
 }
 
 section a {
@@ -57,32 +85,54 @@ section li {
 
 figure {
   width: 300px;
+  /* width: 200px;
+  margin-left: 3rem; */
+
+  @media screen and (width <= 450px) {
+    width: 200px;
+    margin-left: 3rem;
+  }
 }
 
 section img {
+  display: block;
   width: 100%;
   height: auto;
-  filter: brightness(2);
+  filter: brightness(1);
   object-fit: cover;
+  object-position: cover;
+  /* border: 2px solid; */
+  border-radius: 20px;
 }
 
-footer p {
-  margin: 2rem 4rem;
-  font-size: 10px;
-  text-align: center;
+.text-get-in-touch {
+  padding-top: 3rem;
 }
 
 .contact {
-  margin: 3rem;
+  margin: 0.5rem 2rem;
   max-width: 50ch;
+
+  @media screen and (width <= 450px) {
+    margin: 0.5rem 1.5rem;
+  }
 }
 .contact fieldset {
   padding: 30px;
+
+  @media screen and (width <= 450) {
+    padding: 10px;
+  }
 }
 .contact-label {
   display: inline-block;
   width: 80px;
   height: 40px;
+
+  @media screen and (width <= 450px) {
+    width: 50px;
+    height: 10px;
+  }
 }
 .contact-input:focus-visible {
   outline: 3px solid crimson;
@@ -91,8 +141,19 @@ footer p {
 .contact-textarea,
 .contact-input {
   width: 250px;
+
+  @media screen and (width <= 450px) {
+    width: 200px;
+    margin-bottom: 30px;
+  }
 }
 
 .contact fieldset div {
   text-align: right;
+}
+
+footer p {
+  margin: 2rem 4rem;
+  font-size: 10px;
+  text-align: center;
 }
